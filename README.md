@@ -4,7 +4,7 @@
 
 [合月亭主站项目地址](https://sway.cloud.microsoft/VijU8jOHnEPt8GTP?ref=Link)
 
-[<img src="https://count.getloli.com/@HYT?name=HYT&theme=rule34&padding=9&offset=-3&align=top&scale=1&pixelated=1&darkmode=auto&num=853996356&_=0.17815574692692782" />](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=wWZqzX8EPYK_BG1KVvuLzzrG9SvFhwz5&authKey=JroR1GKyTQL79NyndpCaO3Hb%2BUxRf9Q6ZSK9vM6vgRcH%2FiVGG0%2FudkPwx8MU1we0&noverify=0&group_code=853996356)
+### QQ群:[<img src="https://count.getloli.com/@HYT?name=HYT&theme=rule34&padding=9&offset=-3&align=top&scale=1&pixelated=1&darkmode=auto&num=853996356&_=0.17815574692692782" />](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=wWZqzX8EPYK_BG1KVvuLzzrG9SvFhwz5&authKey=JroR1GKyTQL79NyndpCaO3Hb%2BUxRf9Q6ZSK9vM6vgRcH%2FiVGG0%2FudkPwx8MU1we0&noverify=0&group_code=853996356)
 
 </div>
 
