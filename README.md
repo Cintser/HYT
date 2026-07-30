@@ -1,5 +1,4 @@
-# HYT
-合月亭｜免费二次元资源网站榜单
+#合月亭｜免费二次元资源网站榜单
 
 [合月亭主站项目地址](https://sway.cloud.microsoft/VijU8jOHnEPt8GTP?ref=Link)
 
