@@ -4,6 +4,9 @@
 
 [合月亭主站项目地址](https://sway.cloud.microsoft/VijU8jOHnEPt8GTP?ref=Link)
 
+<br><img src="[https://count.getloli.com/get/@:yenai-plugin?theme=rule34](https://count.getloli.com/@HYT?name=HYT&theme=booru-jaypee&padding=9&offset=-7&align=top&scale=0.8&pixelated=1&darkmode=auto&num=853996356)" /><br>
+
+
 </div>
 
 阅览须知：
