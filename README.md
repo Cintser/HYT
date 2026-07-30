@@ -1,6 +1,10 @@
-#合月亭｜免费二次元资源网站榜单
+<div align="center">
+
+# 合月亭｜免费二次元资源站点目录
 
 [合月亭主站项目地址](https://sway.cloud.microsoft/VijU8jOHnEPt8GTP?ref=Link)
+
+</div>
 
 阅览须知：
 
