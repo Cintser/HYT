@@ -1,3 +1,4 @@
+import glob
 import json
 import os
 from concurrent.futures import ThreadPoolExecutor
@@ -15,7 +16,6 @@ from rich.progress import (
 from rich.table import Table
 
 # ============ 配置 ============
-EXCEL_PATH = "合月亭目录.xlsx"
 LAST_RESULT_FILE = "last_result.json"
 MAX_WORKERS = 20
 TIMEOUT = 15
@@ -26,11 +26,45 @@ class SiteChecker:
     def __init__(self):
         self.console = Console()
         self.sites = []
+        self.excel_path = ""
+
+    def _find_excel(self) -> str:
+        """自动扫描当前目录下的 Excel 文件（排除 Excel 临时文件 ~$）"""
+        files = glob.glob("*.xlsx") + glob.glob("*.xlsm")
+        files = [f for f in files if not f.startswith("~$")]
+        files.sort()
+
+        if not files:
+            self.console.print("[bold red]当前目录下没有找到 Excel 文件（.xlsx / .xlsm）[/bold red]")
+            input("按回车退出...")
+            exit(1)
+
+        if len(files) == 1:
+            return files[0]
+
+        # 多于一个时让用户选择
+        text = ""
+        for i, f in enumerate(files):
+            text += f"[cyan]{i+1}[/cyan]. {f}\n"
+        self.console.print(Panel(
+            text.strip(),
+            title="[bold yellow]检测到多个 Excel 文件，请选择[/bold yellow]",
+            border_style="green"
+        ))
+        while True:
+            choice = self.console.input("[bold]编号:[/bold] > ").strip()
+            try:
+                idx = int(choice) - 1
+                if 0 <= idx < len(files):
+                    return files[idx]
+            except ValueError:
+                pass
+            self.console.print("[red]输入无效，请重新输入[/red]")
 
     def _parse_excel(self) -> List[Dict[str, str]]:
         sites = []
         try:
-            wb = openpyxl.load_workbook(EXCEL_PATH, read_only=True)
+            wb = openpyxl.load_workbook(self.excel_path, read_only=True)
             for sheet_name in wb.sheetnames:
                 ws = wb[sheet_name]
                 for row in ws.iter_rows(min_row=2, values_only=True):
@@ -48,7 +82,7 @@ class SiteChecker:
             wb.close()
             return sites
         except FileNotFoundError:
-            self.console.print(f"[bold red]找不到 '{EXCEL_PATH}'，请确认文件在同目录下[/bold red]")
+            self.console.print(f"[bold red]找不到 '{self.excel_path}'，请确认文件存在[/bold red]")
             input("按回车退出...")
             exit(1)
 
@@ -183,6 +217,8 @@ class SiteChecker:
 
     def run(self):
         while True:
+            self.excel_path = self._find_excel()
+            self.console.print(f"[dim]📄 当前文件：{self.excel_path}[/dim]")
             self.sites = self._parse_excel()
             if not self.sites:
                 self.console.print("[yellow]表格为空，退出。[/yellow]")
